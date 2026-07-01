@@ -1,4 +1,6 @@
-/* ===== RESET & BASE ===== */
+/* ============================================================
+   RESET Y VARIABLES (con la paleta completa)
+   ============================================================ */
 *,
 *::before,
 *::after {
@@ -11,18 +13,29 @@
     --electric-blue: #0066ff;
     --electric-blue-dark: #0052cc;
     --electric-blue-light: #e6f0ff;
+    --electric-blue-lighter: #f0f7ff;
+
     --purple: #7c3aed;
     --purple-dark: #5b21b6;
     --purple-light: #ede9fe;
+    --purple-lighter: #f5f0ff;
+
     --pink: #ec4899;
     --pink-dark: #db2777;
     --pink-light: #fce7f3;
+    --pink-lighter: #fdf0f7;
+
     --yellow: #f59e0b;
     --yellow-dark: #d97706;
     --yellow-light: #fef3c7;
+    --yellow-lighter: #fffbeb;
+
     --orange: #fb923c;
+    --orange-light: #fff4e6;
+
     --white: #ffffff;
     --black: #0a0a0a;
+
     --gray-50: #f8fafc;
     --gray-100: #f1f5f9;
     --gray-200: #e2e8f0;
@@ -33,14 +46,17 @@
     --gray-700: #334155;
     --gray-800: #1e293b;
     --gray-900: #0f172a;
+
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
     --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.12);
     --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.16);
+
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 24px;
     --radius-xl: 32px;
+
     --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
@@ -80,6 +96,9 @@ ul {
     padding: 0 24px;
 }
 
+/* ============================================================
+   ELEMENTOS COMUNES
+   ============================================================ */
 .section-badge {
     display: inline-block;
     font-size: 0.75rem;
@@ -124,15 +143,9 @@ ul {
     margin-right: auto;
 }
 
-/* ===== GLASSMORPHISM ===== */
-.glass {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-/* ===== BUTTONS ===== */
+/* ============================================================
+   BOTONES
+   ============================================================ */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -193,7 +206,9 @@ ul {
     box-shadow: 0 8px 32px rgba(245, 158, 11, 0.45);
 }
 
-/* ===== NAVBAR ===== */
+/* ============================================================
+   NAVBAR
+   ============================================================ */
 .navbar {
     position: fixed;
     top: 0;
@@ -231,18 +246,12 @@ ul {
 .logo-icon {
     width: 42px;
     height: 42px;
-    background: linear-gradient(135deg, var(--electric-blue), var(--purple), var(--pink));
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-size: 1.2rem;
-    font-weight: 700;
+    object-fit: contain;
 }
 
 .logo-text {
-    color: var(--gray-600);
+    color: var(--gray-900);
 }
 
 .logo-text span {
@@ -334,7 +343,9 @@ ul {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ===== HERO ===== */
+/* ============================================================
+   HERO  (fondo negro con acentos de colores)
+   ============================================================ */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -362,9 +373,10 @@ ul {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg,
-            rgba(0, 0, 0, 0.75) 0%,
-            rgba(0, 0, 0, 0.45) 50%,
-            rgba(0, 0, 0, 0.65) 100%);
+            rgba(0, 0, 0, 0.80) 0%,
+            rgba(0, 102, 255, 0.15) 40%,
+            rgba(124, 58, 237, 0.20) 70%,
+            rgba(236, 72, 153, 0.10) 100%);
     z-index: 1;
 }
 
@@ -469,10 +481,12 @@ ul {
     margin-bottom: 2px;
 }
 
-/* ===== SERVICES ===== */
+/* ============================================================
+   SERVICES  (fondo blanco)
+   ============================================================ */
 .services {
     padding: 100px 0 80px;
-    background: var(--gray-50);
+    background: var(--white);
 }
 
 .services-grid {
@@ -491,6 +505,24 @@ ul {
     transition: var(--transition);
     border: 1px solid rgba(0, 0, 0, 0.03);
     cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--electric-blue), var(--purple), var(--pink));
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.service-card:hover::before {
+    opacity: 1;
 }
 
 .service-card:hover {
@@ -530,10 +562,24 @@ ul {
     color: var(--gray-500);
 }
 
-/* ===== WHY US ===== */
+/* ============================================================
+   WHY US  (fondo azul muy claro)
+   ============================================================ */
 .why-us {
     padding: 100px 0;
-    background: var(--white);
+    background: var(--electric-blue-lighter);
+    position: relative;
+}
+
+.why-us::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to top, var(--white), transparent);
+    pointer-events: none;
 }
 
 .why-grid {
@@ -548,10 +594,15 @@ ul {
     padding: 24px 16px;
     border-radius: var(--radius-md);
     transition: var(--transition);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .why-item:hover {
-    background: var(--gray-50);
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
 }
 
 .why-icon {
@@ -578,10 +629,12 @@ ul {
     color: var(--gray-500);
 }
 
-/* ===== GALLERY ===== */
+/* ============================================================
+   GALLERY  (fondo morado muy claro)
+   ============================================================ */
 .gallery {
     padding: 100px 0;
-    background: var(--gray-50);
+    background: var(--purple-lighter);
 }
 
 .gallery-masonry {
@@ -598,6 +651,13 @@ ul {
     cursor: pointer;
     aspect-ratio: 1/1;
     background: var(--gray-200);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    box-shadow: var(--shadow-lg);
+    transform: scale(1.01);
 }
 
 .gallery-item:nth-child(1) {
@@ -668,7 +728,9 @@ ul {
     font-size: 0.9rem;
 }
 
-/* ===== LIGHTBOX ===== */
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
 .lightbox {
     position: fixed;
     inset: 0;
@@ -714,10 +776,12 @@ ul {
     transform: rotate(90deg);
 }
 
-/* ===== TESTIMONIALS ===== */
+/* ============================================================
+   TESTIMONIALS  (fondo rosa muy claro)
+   ============================================================ */
 .testimonials {
     padding: 100px 0;
-    background: var(--white);
+    background: var(--pink-lighter);
 }
 
 .testimonial-carousel {
@@ -734,16 +798,18 @@ ul {
 
 .testimonial-card {
     flex: 0 0 calc(33.333% - 16px);
-    background: var(--gray-50);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
     border-radius: var(--radius-md);
     padding: 32px 28px;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     transition: var(--transition);
 }
 
 .testimonial-card:hover {
     box-shadow: var(--shadow-md);
     transform: translateY(-4px);
+    background: var(--white);
 }
 
 .testimonial-stars {
@@ -836,10 +902,12 @@ ul {
     border-radius: 4px;
 }
 
-/* ===== AREAS ===== */
+/* ============================================================
+   AREAS  (fondo amarillo muy claro)
+   ============================================================ */
 .areas {
     padding: 80px 0;
-    background: var(--gray-50);
+    background: var(--yellow-lighter);
 }
 
 .areas-grid {
@@ -869,10 +937,23 @@ ul {
     box-shadow: var(--shadow-md);
 }
 
-/* ===== PROCESS ===== */
+/* ============================================================
+   PROCESS  (fondo blanco con acento naranja)
+   ============================================================ */
 .process {
     padding: 100px 0;
     background: var(--white);
+    position: relative;
+}
+
+.process::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange), var(--yellow));
 }
 
 .process-grid {
@@ -891,15 +972,15 @@ ul {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--electric-blue), var(--purple));
-    color: var(--white);
+    background: linear-gradient(135deg, var(--orange), var(--yellow));
+    color: var(--black);
     font-size: 1.4rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 16px;
-    box-shadow: 0 4px 16px rgba(0, 102, 255, 0.25);
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
 }
 
 .process-step h4 {
@@ -913,10 +994,12 @@ ul {
     color: var(--gray-500);
 }
 
-/* ===== FAQ ===== */
+/* ============================================================
+   FAQ  (fondo naranja muy claro)
+   ============================================================ */
 .faq {
     padding: 100px 0;
-    background: var(--gray-50);
+    background: var(--orange-light);
 }
 
 .faq-list {
@@ -931,6 +1014,11 @@ ul {
     box-shadow: var(--shadow-sm);
     border: 1px solid rgba(0, 0, 0, 0.03);
     overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow-md);
 }
 
 .faq-question {
@@ -959,6 +1047,7 @@ ul {
     font-size: 1.2rem;
     transition: var(--transition);
     flex-shrink: 0;
+    color: var(--electric-blue);
 }
 
 .faq-item.open .faq-question .icon {
@@ -980,7 +1069,9 @@ ul {
     padding: 0 28px 24px;
 }
 
-/* ===== CONTACT ===== */
+/* ============================================================
+   CONTACT  (fondo blanco con detalles de color)
+   ============================================================ */
 .contact {
     padding: 100px 0;
     background: var(--white);
@@ -1083,7 +1174,9 @@ ul {
     border: 0;
 }
 
-/* ===== WHATSAPP FLOATING ===== */
+/* ============================================================
+   WHATSAPP FLOATING
+   ============================================================ */
 .whatsapp-float {
     position: fixed;
     bottom: 28px;
@@ -1110,7 +1203,9 @@ ul {
     box-shadow: 0 8px 40px rgba(37, 211, 102, 0.5);
 }
 
-/* ===== FOOTER ===== */
+/* ============================================================
+   FOOTER  (fondo negro)
+   ============================================================ */
 .footer {
     background: var(--black);
     color: rgba(255, 255, 255, 0.7);
@@ -1204,7 +1299,9 @@ ul {
     color: var(--white);
 }
 
-/* ===== SCROLL REVEAL ===== */
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -1216,7 +1313,9 @@ ul {
     transform: translateY(0);
 }
 
-/* ===== RESPONSIVE ===== */
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 @media (max-width: 1024px) {
     .gallery-masonry {
         grid-template-columns: repeat(3, 1fr);
