@@ -1,5 +1,5 @@
 /* ============================================================
-   RESET Y VARIABLES (con la paleta completa)
+   RESET Y VARIABLES (colores más intensos)
    ============================================================ */
 *,
 *::before,
@@ -10,28 +10,29 @@
 }
 
 :root {
-    --electric-blue: #0066ff;
-    --electric-blue-dark: #0052cc;
-    --electric-blue-light: #e6f0ff;
-    --electric-blue-lighter: #f0f7ff;
+    /* Colores principales (30% más fuertes) */
+    --electric-blue: #0055ee;          /* más oscuro y saturado */
+    --electric-blue-dark: #0044cc;
+    --electric-blue-light: #dbeafe;    /* más intenso */
+    --electric-blue-lighter: #bfdbfe;  /* más intenso aún */
 
-    --purple: #7c3aed;
+    --purple: #6d28d9;                /* más oscuro y saturado */
     --purple-dark: #5b21b6;
-    --purple-light: #ede9fe;
-    --purple-lighter: #f5f0ff;
+    --purple-light: #e9d5ff;          /* más intenso */
+    --purple-lighter: #ddd6fe;        /* más intenso */
 
-    --pink: #ec4899;
-    --pink-dark: #db2777;
-    --pink-light: #fce7f3;
-    --pink-lighter: #fdf0f7;
+    --pink: #db2777;                  /* más oscuro y saturado */
+    --pink-dark: #be185d;
+    --pink-light: #fbcfe8;            /* más intenso */
+    --pink-lighter: #f9a8d4;          /* más intenso */
 
-    --yellow: #f59e0b;
-    --yellow-dark: #d97706;
-    --yellow-light: #fef3c7;
-    --yellow-lighter: #fffbeb;
+    --yellow: #d97706;                /* más oscuro y saturado */
+    --yellow-dark: #b45309;
+    --yellow-light: #fde68a;          /* más intenso */
+    --yellow-lighter: #fcd34d;        /* más intenso */
 
-    --orange: #fb923c;
-    --orange-light: #fff4e6;
+    --orange: #f97316;                /* más oscuro y saturado */
+    --orange-light: #fed7aa;          /* más intenso */
 
     --white: #ffffff;
     --black: #0a0a0a;
@@ -165,12 +166,12 @@ ul {
 .btn-primary {
     background: linear-gradient(135deg, var(--electric-blue), var(--purple));
     color: var(--white);
-    box-shadow: 0 4px 16px rgba(0, 102, 255, 0.35);
+    box-shadow: 0 4px 16px rgba(0, 85, 238, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(0, 102, 255, 0.45);
+    box-shadow: 0 8px 32px rgba(0, 85, 238, 0.5);
 }
 
 .btn-secondary {
@@ -198,12 +199,12 @@ ul {
 .btn-gold {
     background: linear-gradient(135deg, var(--yellow), var(--orange));
     color: var(--black);
-    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+    box-shadow: 0 4px 16px rgba(217, 119, 6, 0.4);
 }
 
 .btn-gold:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(245, 158, 11, 0.45);
+    box-shadow: 0 8px 32px rgba(217, 119, 6, 0.5);
 }
 
 /* ============================================================
@@ -308,7 +309,7 @@ ul {
 
 .nav-cta:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(0, 102, 255, 0.35);
+    box-shadow: 0 4px 16px rgba(0, 85, 238, 0.4);
     color: var(--white) !important;
 }
 
@@ -344,7 +345,7 @@ ul {
 }
 
 /* ============================================================
-   HERO  (fondo negro con acentos de colores)
+   HERO  (fondo negro con acentos intensos)
    ============================================================ */
 .hero {
     min-height: 100vh;
@@ -373,10 +374,10 @@ ul {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg,
-            rgba(0, 0, 0, 0.80) 0%,
-            rgba(0, 102, 255, 0.15) 40%,
-            rgba(124, 58, 237, 0.20) 70%,
-            rgba(236, 72, 153, 0.10) 100%);
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 85, 238, 0.20) 40%,
+            rgba(109, 40, 217, 0.25) 70%,
+            rgba(219, 39, 119, 0.15) 100%);
     z-index: 1;
 }
 
@@ -528,7 +529,7 @@ ul {
 .service-card:hover {
     transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
-    border-color: rgba(0, 102, 255, 0.08);
+    border-color: rgba(0, 85, 238, 0.15);
 }
 
 .service-icon {
@@ -563,7 +564,7 @@ ul {
 }
 
 /* ============================================================
-   WHY US  (fondo azul muy claro)
+   WHY US  (fondo azul más intenso)
    ============================================================ */
 .why-us {
     padding: 100px 0;
@@ -594,7 +595,7 @@ ul {
     padding: 24px 16px;
     border-radius: var(--radius-md);
     transition: var(--transition);
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.8);
 }
@@ -630,7 +631,7 @@ ul {
 }
 
 /* ============================================================
-   GALLERY  (fondo morado muy claro)
+   GALLERY  (fondo morado más intenso)
    ============================================================ */
 .gallery {
     padding: 100px 0;
@@ -710,7 +711,7 @@ ul {
 .gallery-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, transparent 60%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, transparent 60%);
     opacity: 0;
     transition: var(--transition);
     display: flex;
@@ -777,7 +778,7 @@ ul {
 }
 
 /* ============================================================
-   TESTIMONIALS  (fondo rosa muy claro)
+   TESTIMONIALS  (fondo rosa más intenso)
    ============================================================ */
 .testimonials {
     padding: 100px 0;
@@ -798,7 +799,7 @@ ul {
 
 .testimonial-card {
     flex: 0 0 calc(33.333% - 16px);
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(8px);
     border-radius: var(--radius-md);
     padding: 32px 28px;
@@ -903,7 +904,7 @@ ul {
 }
 
 /* ============================================================
-   AREAS  (fondo amarillo muy claro)
+   AREAS  (fondo amarillo más intenso)
    ============================================================ */
 .areas {
     padding: 80px 0;
@@ -938,7 +939,7 @@ ul {
 }
 
 /* ============================================================
-   PROCESS  (fondo blanco con acento naranja)
+   PROCESS  (fondo blanco con acento naranja intenso)
    ============================================================ */
 .process {
     padding: 100px 0;
@@ -980,7 +981,7 @@ ul {
     align-items: center;
     justify-content: center;
     margin: 0 auto 16px;
-    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.35);
 }
 
 .process-step h4 {
@@ -995,7 +996,7 @@ ul {
 }
 
 /* ============================================================
-   FAQ  (fondo naranja muy claro)
+   FAQ  (fondo naranja más intenso)
    ============================================================ */
 .faq {
     padding: 100px 0;
@@ -1070,7 +1071,7 @@ ul {
 }
 
 /* ============================================================
-   CONTACT  (fondo blanco con detalles de color)
+   CONTACT  (fondo blanco)
    ============================================================ */
 .contact {
     padding: 100px 0;
@@ -1115,7 +1116,7 @@ ul {
 .contact-form select:focus {
     outline: none;
     border-color: var(--electric-blue);
-    box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.08);
+    box-shadow: 0 0 0 4px rgba(0, 85, 238, 0.12);
 }
 
 .contact-form textarea {
